@@ -4,6 +4,7 @@ class toDo {
     }
 }
 
+//
 let todos = [];
 
 
@@ -14,7 +15,7 @@ window.onload = function () {
     let main = document.getElementById("main");
     main.appendChild(myUl);
 
-    //LIST ITEMS
+    //LIST ITEMSgit
     let todo1 = new toDo('Tvätta');
     let todo2 = new toDo('Diska');
     let todo3 = new toDo('Duscha');
@@ -25,14 +26,14 @@ window.onload = function () {
 
     //TEXT INPUT
     let textInput = document.getElementById("textInput");
+    textInput.id = "textInput";
+
     textInput.addEventListener("keyup", function(event){
         if (event.keyCode === 13) {
             event.preventDefault();
             document.getElementById("addButton").click();
         }
     });
-
-    textInput.id = textInput;
 
     //ADDBUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', addListItem);
@@ -42,6 +43,8 @@ window.onload = function () {
 
 function addListItem (){
     let textInput = document.getElementById("textInput");
+    textInput.id = textInput;
+
     let newListItem = textInput.value;
     let newToDo = new toDo (newToDo);
     todos.push(newToDo);
