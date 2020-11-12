@@ -63,9 +63,13 @@ function createHTML (){
 
         let closeBtn = document.createElement("button"); //skapa knapp
         closeBtn.id = "closeBtn";
-        closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
+        closeBtn.addEventListener('click', closeFunction); 
         listItem.appendChild(closeBtn); //lägg knapparna i li
     }
 }
 
 preventDefault
+
+function closeFunction (){
+    console.log("hej");
+}
