@@ -4,11 +4,10 @@ class toDo {
     }
 }
 
-//
+//array todos
 let todos = [];
 
-
-window.onload = function () {
+window.onload = function (){
     //UL
     let myUl = document.createElement("ul");
     myUl.id = "myUl";
@@ -19,10 +18,12 @@ window.onload = function () {
     let todo1 = new toDo('Tvätta');
     let todo2 = new toDo('Diska');
     let todo3 = new toDo('Duscha');
+    let todo4 = new toDo('Bädda');
 
     todos.push(todo1);
     todos.push(todo2);
     todos.push(todo3);
+    todos.push(todo4);
 
     //TEXT INPUT
     let textInput = document.getElementById("textInput");
@@ -36,25 +37,24 @@ window.onload = function () {
     });
 
     //ADDBUTTON
-    let addButton = document.getElementById("addButton").addEventListener('click', addListItem);
+    let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
 
     createHTML();
 }
 
-function addListItem (){
-    let textInput = document.getElementById("textInput");
-    textInput.id = textInput;
-
-    let newListItem = textInput.value;
-    let newToDo = new toDo (newToDo);
+//SKAPA NYTT LIST ITEM
+function createListItem (){
+    let newListItem = document.getElementById("textInput").value;
+    let newToDo = new toDo (newListItem);
     todos.push(newToDo);
 
     createHTML();
 }
 
-
+//SKRIV UT LIST ITEMS - TILLDELA STÄNGKNAPPAR
 function createHTML (){
-    //SKRIV UT LIST ITEMS - TILLDELA STÄNGKNAPPAR
+    myUl.innerHTML = "";
+
     for (let i = 0; i < todos.length; i++) {
         let listItem = document.createElement("li");
         listItem.id = "listItem";
@@ -67,3 +67,5 @@ function createHTML (){
         listItem.appendChild(closeBtn); //lägg knapparna i li
     }
 }
+
+preventDefault
