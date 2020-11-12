@@ -6,6 +6,7 @@ class toDo {
 
 //array todos
 let todos = [];
+todos.id = "todos";
 
 window.onload = function (){
     //UL
@@ -45,10 +46,17 @@ window.onload = function (){
 //SKAPA NYTT LIST ITEM
 function createListItem (){
     let newListItem = document.getElementById("textInput").value;
-    let newToDo = new toDo (newListItem);
-    todos.push(newToDo);
 
-    createHTML();
+    if (newListItem == ""){
+        alert("Du måste skriva något!");
+    }
+
+    else {
+        let newToDo = new toDo (newListItem);
+        todos.push(newToDo);
+        createHTML();
+        document.getElementById("textInput").value = "";
+    }
 }
 
 //SKRIV UT LIST ITEMS - TILLDELA STÄNGKNAPPAR
@@ -67,5 +75,3 @@ function createHTML (){
         listItem.appendChild(closeBtn); //lägg knapparna i li
     }
 }
-
-preventDefault
