@@ -1,7 +1,7 @@
-/*body {
+body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
-    background-color: lightgray;
+    background-color: beige;
 
     .container {
         display: flex;
@@ -18,7 +18,7 @@
             padding: 10px;
         }
     
-        header {
+        #header {
             position: relative;
             width: 100%;
             padding: 5px;
@@ -52,6 +52,7 @@
                 #listItem{
                     cursor: pointer;
                     position: relative;
+                    width: 100%;
                     padding: 15px;
     
                     &:hover {
@@ -65,6 +66,19 @@
                         right: 10px;
                         height: 20px;
                         width: 20px;
+                        border: 3px solid red;
+    
+                        &:hover {
+                            box-shadow: 2px 2px black;
+    
+                        }
+                    }
+                    #checkBtn {
+                        position: absolute;
+                        right: 50px;
+                        height: 20px;
+                        width: 20px;
+                        border: 3px solid green;
     
                         &:hover {
                             box-shadow: 2px 2px black;
@@ -75,4 +89,4 @@
             }
         }
     }
-}*/
+}
