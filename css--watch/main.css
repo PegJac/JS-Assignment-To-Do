@@ -1,7 +1,7 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 20px;
-  background-color: beige; }
+  background-color: lightgray; }
   body .container {
     display: flex;
     flex-direction: column;
@@ -32,11 +32,11 @@ body {
       flex-direction: column;
       margin: 0;
       padding: 0;
-      list-style: none; }
+      list-style: none;
+      background-color: lightblue; }
       body .container #main #myUl #listItem {
         cursor: pointer;
         position: relative;
-        width: 100%;
         padding: 15px; }
         body .container #main #myUl #listItem:hover {
           background-color: rgba(128, 128, 128, 0.415);
