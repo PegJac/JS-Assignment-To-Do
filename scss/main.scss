@@ -65,6 +65,19 @@
                         right: 10px;
                         height: 20px;
                         width: 20px;
+                        border: 3px solid red;
+    
+                        &:hover {
+                            box-shadow: 2px 2px black;
+    
+                        }
+                    }
+                    #checkBtn {
+                        position: absolute;
+                        right: 50px;
+                        height: 20px;
+                        width: 20px;
+                        border: 3px solid green;
     
                         &:hover {
                             box-shadow: 2px 2px black;
