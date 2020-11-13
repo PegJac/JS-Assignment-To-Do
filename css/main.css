@@ -45,6 +45,15 @@ body {
           position: absolute;
           right: 10px;
           height: 20px;
-          width: 20px; }
+          width: 20px;
+          border: 3px solid red; }
           body .container #main #myUl #listItem #closeBtn:hover {
+            box-shadow: 2px 2px black; }
+        body .container #main #myUl #listItem #checkBtn {
+          position: absolute;
+          right: 50px;
+          height: 20px;
+          width: 20px;
+          border: 3px solid green; }
+          body .container #main #myUl #listItem #checkBtn:hover {
             box-shadow: 2px 2px black; }

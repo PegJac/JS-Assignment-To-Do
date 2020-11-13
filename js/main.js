@@ -1,12 +1,16 @@
 class toDo {
     constructor (toDoItem){
+        this.id = x++;
         this.toDoItem = toDoItem;
     }
 }
-
 //array todos
 let todos = [];
 todos.id = "todos";
+
+//array id
+let x = 1;
+
 
 window.onload = function (){
     //UL
@@ -16,22 +20,22 @@ window.onload = function (){
     main.appendChild(myUl);
 
     //LIST ITEMSgit
-    let todo1 = new toDo('Tvätta');
-    let todo2 = new toDo('Diska');
-    let todo3 = new toDo('Duscha');
-    let todo4 = new toDo('Bädda');
+    let todo1 = new toDo('To do 1');
+    let todo2 = new toDo('To do 2');
+    let todo3 = new toDo('To do 3');
 
     todos.push(todo1);
     todos.push(todo2);
     todos.push(todo3);
-    todos.push(todo4);
+
+    console.log(todos);
 
     //TEXT INPUT
     let textInput = document.getElementById("textInput");
     textInput.id = "textInput";
 
     textInput.addEventListener("keyup", function(event){
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13){
             event.preventDefault();
             document.getElementById("addButton").click();
         }
@@ -54,8 +58,9 @@ function createListItem (){
     else {
         let newToDo = new toDo (newListItem);
         todos.push(newToDo);
-        createHTML();
         document.getElementById("textInput").value = "";
+
+        createHTML();
     }
 }
 
@@ -69,9 +74,24 @@ function createHTML (){
         listItem.innerHTML = todos[i].toDoItem;
         myUl.appendChild(listItem);
 
-        let closeBtn = document.createElement("button"); //skapa knapp
+        let closeBtn = document.createElement("button"); //skapa stäng knapp
+        let checkBtn = document.createElement("button"); //skapa check knapp
         closeBtn.id = "closeBtn";
-        closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
+        checkBtn.id = "checkBtn";
+        //closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
+        closeBtn.addEventListener('click', ()=>{deleteItem(todos[i])});
+        checkBtn.addEventListener('click', finishedItem);
+        listItem.appendChild(checkBtn);
         listItem.appendChild(closeBtn); //lägg knapparna i li
     }
+}
+
+function deleteItem (itemToBeDeleted){
+    
+    todos.splice(itemToBeDeleted, 1);
+}
+
+function finishedItem (){
+    alert("klar-knappen funkar :-)");
+
 }
