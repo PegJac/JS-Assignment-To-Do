@@ -16,8 +16,7 @@ window.onload = function (){
     //UL
     let myUl = document.createElement("ul");
     myUl.id = "myUl";
-    let main = document.getElementById("main");
-    main.appendChild(myUl);
+    let main = document.getElementById("main").appendChild(myUl);
 
     //LIST ITEMSgit
     let todo1 = new toDo('To do 1');
@@ -34,12 +33,14 @@ window.onload = function (){
     let textInput = document.getElementById("textInput");
     textInput.id = "textInput";
 
+    /*
     textInput.addEventListener("keyup", function(event){
         if (event.keyCode === 13){
             event.preventDefault();
             document.getElementById("addButton").click();
         }
     });
+    */
 
     //ADDBUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
@@ -49,10 +50,13 @@ window.onload = function (){
 
 //SKAPA NYTT LIST ITEM
 function createListItem (){
+    let textInput = document.getElementById("textInput");
     let newListItem = document.getElementById("textInput").value;
+    let addButton = document.getElementById("addButton");
+
 
     if (newListItem == ""){
-        alert("Du måste skriva något!");
+        alert("Du måste skriva någonting!");
     }
 
     else {
@@ -77,7 +81,9 @@ function createHTML (){
         let closeBtn = document.createElement("button"); //skapa stäng knapp
         let checkBtn = document.createElement("button"); //skapa check knapp
         closeBtn.id = "closeBtn";
+        closeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
         checkBtn.id = "checkBtn";
+        checkBtn.innerHTML = '<i class="far fa-check-circle"></i>';
         //closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
         closeBtn.addEventListener('click', ()=>{deleteItem(todos[i])});
         checkBtn.addEventListener('click', finishedItem);
@@ -87,11 +93,14 @@ function createHTML (){
 }
 
 function deleteItem (itemToBeDeleted){
+    let deleteItem = JSON.stringify(itemToBeDeleted);
+    console.log(deleteItem);
     
-    todos.splice(itemToBeDeleted, 1);
+    //let todos = document.getElementById("todos");
+    todos.splice(i, 1);
 }
 
-function finishedItem (){
-    alert("klar-knappen funkar :-)");
-
+function finishedItem (itemToCheck){
+    let checkItem = JSON.stringify(itemToCheck);
+    itemToCheck.style.textDecoration = "line-through";
 }
