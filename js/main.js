@@ -22,10 +22,14 @@ window.onload = function (){
     let todo1 = new toDo('To do 1');
     let todo2 = new toDo('To do 2');
     let todo3 = new toDo('To do 3');
+    let todo4 = new toDo('To do 4');
+    let todo5 = new toDo('To do 5');
 
     todos.push(todo1);
     todos.push(todo2);
     todos.push(todo3);
+    todos.push(todo4);
+    todos.push(todo5);
 
     console.log(todos);
 
@@ -44,7 +48,6 @@ window.onload = function (){
 
     //ADDBUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
-
     createHTML();
 }
 
@@ -86,21 +89,51 @@ function createHTML (){
         checkBtn.innerHTML = '<i class="far fa-check-circle"></i>';
         //closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
         closeBtn.addEventListener('click', ()=>{deleteItem(todos[i])});
-        checkBtn.addEventListener('click', finishedItem);
+        checkBtn.addEventListener('click', ()=>{finishedItem(todos[i])});
         listItem.appendChild(checkBtn);
         listItem.appendChild(closeBtn); //lägg knapparna i li
     }
 }
 
 function deleteItem (itemToBeDeleted){
-    let deleteItem = JSON.stringify(itemToBeDeleted);
-    console.log(deleteItem);
-    
-    //let todos = document.getElementById("todos");
-    todos.splice(i, 1);
+    let nummer = JSON.parse(itemToBeDeleted.id-1);
+    console.log(itemToBeDeleted);
+    //todos.splice(itemToBeDeleted, 1);
+
+    console.log(nummer);
+    todos.splice(nummer, 1)
+
+    createHTML();
+
 }
 
-function finishedItem (itemToCheck){
-    let checkItem = JSON.stringify(itemToCheck);
-    itemToCheck.style.textDecoration = "line-through";
+function finishedItem (itemToBeChecked){
+    console.log(itemToBeChecked);
 }
+
+
+
+
+
+
+
+
+
+/*
+
+
+För betyg G: 
+X Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter)
+X Presentera denna på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
+• Implementera klickhändelse för att hantera borttagandet av en todo. 
+• Todo tas bort från skärmen och markeras som klar i listan.
+• Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. bootstrap, flex eller liknande. 
+
+För betyg VG: 
+• Alla punkter under G
+• Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
+X Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
+• Kunna sortera ordningen på dina todos
+
+
+*/

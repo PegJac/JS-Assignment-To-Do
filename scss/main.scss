@@ -1,20 +1,20 @@
+@import 'colors';
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
-
-    background-color: lightgray;
+    color: $textColor;
+    background-color: $backgroundColor;
 
     .container {
         display: flex;
         flex-direction: column;
-        //border: 5px solid black;
         border-radius: 25px;
         margin-top: 20px;
         margin-bottom: 20px;
         padding-bottom: 20px;
 
         #heading {
-            color: black;
             text-align: center;
             font-size: 30px;
             padding: 10px;
@@ -27,7 +27,15 @@ body {
             margin-bottom: 20px;
 
             #textInput {
+                color: $textColor;
+                padding-left: 10px;
                 width: 79%;
+                border-radius: 25px;
+                background-color: rgba(128, 128, 128, 0.251);
+                
+                &:hover {
+                    background-color: rgba(199, 199, 199, 0.238);
+                }
                 
             }
 
@@ -35,9 +43,12 @@ body {
                 position: absolute;
                 right: 1%;
                 width: 19%;
+                border-radius: 25px;
+                color: white;
+                background-color: rgba(128, 128, 128, 0.251);
 
                 &:hover {
-                    box-shadow: 2px 2px black;
+                    background-color: rgba(199, 199, 199, 0.238);
                 }
             }
         } 
@@ -52,13 +63,14 @@ body {
                 list-style: none;
     
                 #listItem{
+                    border-radius: 25px;
                     cursor: pointer;
                     position: relative;
                     width: 100%;
                     padding: 15px;
     
                     &:hover {
-                        background-color: rgba(128, 128, 128, 0.238);
+                        background-color: rgba(83, 83, 83, 0.238);
                         box-shadow: 2px 2px rgba(0, 0, 0, 0.197);
     
                     }
@@ -66,23 +78,26 @@ body {
                     #closeBtn {
                         position: absolute;
                         right: 10px;
-                        border: 3px solid red;
-                        background-color: rgba(255, 0, 0, 0.122);
-    
+                        border-radius: 25px;
+                        background-color: grey;
+                        color: white;
+                        
                         &:hover {
                             box-shadow: 2px 2px black;
-    
+                            background-color: rgba(199, 199, 199, 0.238);
                         }
                     }
                     #checkBtn {
                         position: absolute;
                         right: 50px;
-                        border: 3px solid green;
-                        background-color: rgba(64, 255, 0, 0.122);
+                        color: white;
+                        border-radius: 25px;
+                        background-color: grey;
+                        color: white;
     
                         &:hover {
                             box-shadow: 2px 2px black;
-    
+                            background-color: rgba(199, 199, 199, 0.238);
                         }
                     }
                 }
