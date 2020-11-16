@@ -33,21 +33,21 @@ window.onload = function (){
 
     console.log(todos);
 
-    //TEXT INPUT
-    let textInput = document.getElementById("textInput");
-    textInput.id = "textInput";
-
-    /*
+/*
     textInput.addEventListener("keyup", function(event){
         if (event.keyCode === 13){
             event.preventDefault();
             document.getElementById("addButton").click();
         }
     });
-    */
+*/
 
     //ADDBUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
+
+    //TEXT INPUT
+    let textInput = document.getElementById("textInput");
+    textInput.id = "textInput";
     createHTML();
 }
 
@@ -96,15 +96,15 @@ function createHTML (){
 }
 
 function deleteItem (itemToBeDeleted){
-    let nummer = JSON.parse(itemToBeDeleted.id-1);
-    console.log(itemToBeDeleted);
-    //todos.splice(itemToBeDeleted, 1);
+    let position = Number(itemToBeDeleted.id - 1);
 
-    console.log(nummer);
-    todos.splice(nummer, 1)
+    console.log(itemToBeDeleted);
+    console.log("id " + itemToBeDeleted.id);
+    console.log("position " + position);
+    
+    todos.splice(position, 1);
 
     createHTML();
-
 }
 
 function finishedItem (itemToBeChecked){

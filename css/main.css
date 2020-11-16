@@ -49,8 +49,8 @@ body {
         width: 100%;
         padding: 15px; }
         body .container #main #myUl #listItem:hover {
-          background-color: rgba(83, 83, 83, 0.238);
-          box-shadow: 2px 2px rgba(0, 0, 0, 0.197); }
+          background-color: rgba(86, 86, 86, 0.367);
+          box-shadow: 2px 2px rgba(41, 41, 41, 0.591); }
         body .container #main #myUl #listItem #closeBtn {
           position: absolute;
           right: 10px;
