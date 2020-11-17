@@ -17,24 +17,25 @@ body {
     body .container #header {
       position: relative;
       width: 100%;
-      padding: 5px;
       margin-bottom: 20px; }
       body .container #header #textInput {
         color: white;
         padding-left: 10px;
-        width: 79%;
         border-radius: 25px;
         background-color: rgba(128, 128, 128, 0.258); }
         body .container #header #textInput:hover {
           background-color: rgba(199, 199, 199, 0.238); }
       body .container #header #addButton {
-        position: absolute;
-        right: 1%;
-        width: 19%;
         border-radius: 25px;
         color: white;
         background-color: rgba(128, 128, 128, 0.251); }
         body .container #header #addButton:hover {
+          background-color: rgba(199, 199, 199, 0.238); }
+      body .container #header #sortButton {
+        border-radius: 25px;
+        color: white;
+        background-color: rgba(128, 128, 128, 0.251); }
+        body .container #header #sortButton:hover {
           background-color: rgba(199, 199, 199, 0.238); }
     body .container #main #myUl {
       display: flex;

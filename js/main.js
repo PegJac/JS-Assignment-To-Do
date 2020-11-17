@@ -18,7 +18,7 @@ window.onload = function (){
     myUl.id = "myUl";
     let main = document.getElementById("main").appendChild(myUl);
 
-    //LIST ITEMSgit
+    //LIST ITEMS
     let todo1 = new toDo('To do 1');
     let todo2 = new toDo('To do 2');
     let todo3 = new toDo('To do 3');
@@ -33,21 +33,25 @@ window.onload = function (){
 
     console.log(todos);
 
-/*
-    textInput.addEventListener("keyup", function(event){
-        if (event.keyCode === 13){
-            event.preventDefault();
-            document.getElementById("addButton").click();
-        }
-    });
-*/
-
-    //ADDBUTTON
+    //ADD BUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
+
+    //SORT BUTTON
+    let sortButton = document.getElementById("sortButton").addEventListener('click', sortToDos);
 
     //TEXT INPUT
     let textInput = document.getElementById("textInput");
     textInput.id = "textInput";
+
+    /*
+    textInput.addEventListener("keyup", function(event){
+        if (event.key === 13){
+            event.preventDefault();
+            document.getElementById("addButton").click();
+        }
+    });
+    */
+
     createHTML();
 }
 
@@ -57,16 +61,14 @@ function createListItem (){
     let newListItem = document.getElementById("textInput").value;
     let addButton = document.getElementById("addButton");
 
-
     if (newListItem == ""){
-        alert("Du måste skriva någonting!");
+        alert("Skriv någonting! :-)");
     }
 
     else {
         let newToDo = new toDo (newListItem);
         todos.push(newToDo);
         document.getElementById("textInput").value = "";
-
         createHTML();
     }
 }
@@ -87,7 +89,6 @@ function createHTML (){
         closeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
         checkBtn.id = "checkBtn";
         checkBtn.innerHTML = '<i class="far fa-check-circle"></i>';
-        //closeBtn.addEventListener('click', ()=>{listItem.remove();}); 
         closeBtn.addEventListener('click', ()=>{deleteItem(todos[i])});
         checkBtn.addEventListener('click', ()=>{finishedItem(todos[i])});
         listItem.appendChild(checkBtn);
@@ -96,26 +97,26 @@ function createHTML (){
 }
 
 function deleteItem (itemToBeDeleted){
-    let position = Number(itemToBeDeleted.id - 1);
 
-    console.log(itemToBeDeleted);
-    console.log("id " + itemToBeDeleted.id);
-    console.log("position " + position);
-    
-    todos.splice(position, 1);
-
-    createHTML();
+    for (let i = 0; i < todos.length; i++) {
+        if (todos[i].id == itemToBeDeleted.id) {
+            todos.splice(i, 1);
+            createHTML();
+        }
+    }
 }
 
 function finishedItem (itemToBeChecked){
-    console.log(itemToBeChecked);
+    for (let i = 0; i < todos.length; i++) {
+        if (todos[i].id == itemToBeChecked.id) {
+            itemToBeChecked
+        }
+    }}
+
+function sortToDos (){
+    //todos.sort();
+    //createHTML();
 }
-
-
-
-
-
-
 
 
 
@@ -125,9 +126,9 @@ function finishedItem (itemToBeChecked){
 För betyg G: 
 X Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter)
 X Presentera denna på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
-• Implementera klickhändelse för att hantera borttagandet av en todo. 
-• Todo tas bort från skärmen och markeras som klar i listan.
-• Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. bootstrap, flex eller liknande. 
+X Implementera klickhändelse för att hantera borttagandet av en todo. 
+X Todo tas bort från skärmen och markeras som klar i listan.
+X Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. bootstrap, flex eller liknande. 
 
 För betyg VG: 
 • Alla punkter under G
