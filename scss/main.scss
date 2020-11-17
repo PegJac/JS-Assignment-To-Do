@@ -23,13 +23,11 @@ body {
         #header {
             position: relative;
             width: 100%;
-            padding: 5px;
             margin-bottom: 20px;
 
             #textInput {
                 color: $textColor;
                 padding-left: 10px;
-                width: 79%;
                 border-radius: 25px;
                 background-color: rgba(128, 128, 128, 0.258);
                 
@@ -40,9 +38,16 @@ body {
             }
 
             #addButton {
-                position: absolute;
-                right: 1%;
-                width: 19%;
+                border-radius: 25px;
+                color: white;
+                background-color: rgba(128, 128, 128, 0.251);
+
+                &:hover {
+                    background-color: rgba(199, 199, 199, 0.238);
+                }
+            }
+
+            #sortButton {
                 border-radius: 25px;
                 color: white;
                 background-color: rgba(128, 128, 128, 0.251);
