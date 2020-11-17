@@ -49,15 +49,6 @@ window.onload = function (){
     let textInput = document.getElementById("textInput");
     textInput.id = "textInput";
 
-    /*
-    textInput.addEventListener("keyup", function(event){
-        if (event.key === 13){
-            event.preventDefault();
-            document.getElementById("addButton").click();
-        }
-    });
-    */
-
     createHTML();
 }
 
