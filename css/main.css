@@ -71,3 +71,5 @@ body {
           body .container #main #myUl #listItem #checkBtn:hover {
             box-shadow: 2px 2px black;
             background-color: rgba(199, 199, 199, 0.238); }
+    body .container #main #finishedUl {
+      border: 1px solid red; }

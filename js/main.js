@@ -8,6 +8,9 @@ class toDo {
 let todos = [];
 todos.id = "todos";
 
+let finishedTodos = [];
+finishedTodos.id = "finishedTodos";
+
 //array id
 let x = 1;
 
@@ -18,20 +21,23 @@ window.onload = function (){
     myUl.id = "myUl";
     let main = document.getElementById("main").appendChild(myUl);
 
+    //FINISHED UL
+    let finishedUl = document.createElement("ul");
+    finishedUl.id = "finishedUl";
+    main.appendChild(finishedUl);
+    finishedUl.innerHTML = "hej";
+
     //LIST ITEMS
     let todo1 = new toDo('To do 1');
     let todo2 = new toDo('To do 2');
     let todo3 = new toDo('To do 3');
-    let todo4 = new toDo('To do 4');
-    let todo5 = new toDo('To do 5');
 
     todos.push(todo1);
     todos.push(todo2);
     todos.push(todo3);
-    todos.push(todo4);
-    todos.push(todo5);
 
     console.log(todos);
+
 
     //ADD BUTTON
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
@@ -100,7 +106,8 @@ function deleteItem (itemToBeDeleted){
 
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == itemToBeDeleted.id) {
-            todos.splice(i, 1);
+            let finishedItem = todos.splice(i, 1);
+            finishedTodos.push(finishedItem);
             createHTML();
         }
     }
@@ -109,13 +116,12 @@ function deleteItem (itemToBeDeleted){
 function finishedItem (itemToBeChecked){
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == itemToBeChecked.id) {
-            itemToBeChecked
+            todos[i]
         }
     }}
 
 function sortToDos (){
-    //todos.sort();
-    //createHTML();
+    alert("Not ready..");
 }
 
 
