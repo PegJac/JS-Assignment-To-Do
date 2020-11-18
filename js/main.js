@@ -11,22 +11,12 @@ todos.id = "todos";
 //array items id
 let x = 1;
 
-//array finished array
-let finishedTodos = [];
-finishedTodos.id = "finishedTodos";
-
-
 window.onload = function (){
 
     //UL
     let myUl = document.createElement("ul");
     myUl.id = "myUl";
     let main = document.getElementById("main").appendChild(myUl);
-
-    //FINISHED UL
-    let finishedUl = document.createElement("ul");
-    finishedUl.id = "finishedUl";
-    main.appendChild(finishedUl);
 
     //LIST ITEMS
     let todo1 = new toDo('Tvätta');
@@ -98,10 +88,6 @@ function deleteItem (itemToBeDeleted){
         if (todos[i].id == itemToBeDeleted.id) {
             let splicedItem = todos.splice(i, 1);
 
-
-
-            let finishedUl = document.getElementById("finishedUl")
-
             createHTML();
             completedItem(splicedItem);
         }
@@ -120,27 +106,6 @@ function finishedItem (itemToBeChecked){
 function sortToDos (){
     todos.sort();
 }
-
-
-
-
-function completedItem (splicedItem){
-    let finishedUl = document.getElementById("finishedUl");
-
-    let newToDo = new toDo (newListItem);
-    finishedTodos.push(newToDo);
-    document.getElementById("textInput").value = "";
-    createHTML();
-
-    for (let i = 0; i < finishedTodos.length; i++) {
-        finishedTodos.push(splicedItem);
-        let finishedListItem = document.createElement("li");
-        finishedListItem.id = "finishedListItem";
-        finishedListItem.innerHTML = splicedItem;
-        finishedUl.appendChild(finishedListItem);
-    }
-}
-
 
 
 
