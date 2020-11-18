@@ -4,33 +4,24 @@ class toDo {
         this.toDoItem = toDoItem;
     }
 }
+
 //array todos
 let todos = [];
 todos.id = "todos";
-
-let finishedTodos = [];
-finishedTodos.id = "finishedTodos";
-
-//array id
+//array items id
 let x = 1;
 
-
 window.onload = function (){
+
     //UL
     let myUl = document.createElement("ul");
     myUl.id = "myUl";
     let main = document.getElementById("main").appendChild(myUl);
 
-    //FINISHED UL
-    let finishedUl = document.createElement("ul");
-    finishedUl.id = "finishedUl";
-    main.appendChild(finishedUl);
-    finishedUl.innerHTML = "hej";
-
     //LIST ITEMS
-    let todo1 = new toDo('To do 1');
-    let todo2 = new toDo('To do 2');
-    let todo3 = new toDo('To do 3');
+    let todo1 = new toDo('Tvätta');
+    let todo2 = new toDo('Damsuga');
+    let todo3 = new toDo('Handla');
 
     todos.push(todo1);
     todos.push(todo2);
@@ -54,9 +45,7 @@ window.onload = function (){
 
 //SKAPA NYTT LIST ITEM
 function createListItem (){
-    let textInput = document.getElementById("textInput");
     let newListItem = document.getElementById("textInput").value;
-    let addButton = document.getElementById("addButton");
 
     if (newListItem == ""){
         alert("Skriv någonting! :-)");
@@ -97,8 +86,8 @@ function deleteItem (itemToBeDeleted){
 
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == itemToBeDeleted.id) {
-            let finishedItem = todos.splice(i, 1);
-            finishedTodos.push(finishedItem);
+            let splicedItem = todos.splice(i, 1);
+
             createHTML();
         }
     }
@@ -106,13 +95,15 @@ function deleteItem (itemToBeDeleted){
 
 function finishedItem (itemToBeChecked){
     for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == itemToBeChecked.id) {
-            todos[i]
+        if (todos[i].id == itemToBeChecked.id){
+            
+            createHTML();
         }
-    }}
+    }
+}
 
 function sortToDos (){
-    alert("Not ready..");
+    todos.sort();
 }
 
 
