@@ -4,18 +4,20 @@ class toDo {
         this.toDoItem = toDoItem;
     }
 }
+
 //array todos
 let todos = [];
 todos.id = "todos";
+//array items id
+let x = 1;
 
+//array finished array
 let finishedTodos = [];
 finishedTodos.id = "finishedTodos";
 
-//array id
-let x = 1;
-
 
 window.onload = function (){
+
     //UL
     let myUl = document.createElement("ul");
     myUl.id = "myUl";
@@ -25,12 +27,11 @@ window.onload = function (){
     let finishedUl = document.createElement("ul");
     finishedUl.id = "finishedUl";
     main.appendChild(finishedUl);
-    finishedUl.innerHTML = "hej";
 
     //LIST ITEMS
-    let todo1 = new toDo('To do 1');
-    let todo2 = new toDo('To do 2');
-    let todo3 = new toDo('To do 3');
+    let todo1 = new toDo('Tvätta');
+    let todo2 = new toDo('Damsuga');
+    let todo3 = new toDo('Handla');
 
     todos.push(todo1);
     todos.push(todo2);
@@ -49,23 +50,12 @@ window.onload = function (){
     let textInput = document.getElementById("textInput");
     textInput.id = "textInput";
 
-    /*
-    textInput.addEventListener("keyup", function(event){
-        if (event.key === 13){
-            event.preventDefault();
-            document.getElementById("addButton").click();
-        }
-    });
-    */
-
     createHTML();
 }
 
 //SKAPA NYTT LIST ITEM
 function createListItem (){
-    let textInput = document.getElementById("textInput");
     let newListItem = document.getElementById("textInput").value;
-    let addButton = document.getElementById("addButton");
 
     if (newListItem == ""){
         alert("Skriv någonting! :-)");
@@ -106,23 +96,51 @@ function deleteItem (itemToBeDeleted){
 
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == itemToBeDeleted.id) {
-            let finishedItem = todos.splice(i, 1);
-            finishedTodos.push(finishedItem);
+            let splicedItem = todos.splice(i, 1);
+
+
+
+            let finishedUl = document.getElementById("finishedUl")
+
             createHTML();
+            completedItem(splicedItem);
         }
     }
 }
 
 function finishedItem (itemToBeChecked){
     for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == itemToBeChecked.id) {
-            todos[i]
+        if (todos[i].id == itemToBeChecked.id){
+            
+            createHTML();
         }
-    }}
+    }
+}
 
 function sortToDos (){
-    alert("Not ready..");
+    todos.sort();
 }
+
+
+
+
+function completedItem (splicedItem){
+    let finishedUl = document.getElementById("finishedUl");
+
+    let newToDo = new toDo (newListItem);
+    finishedTodos.push(newToDo);
+    document.getElementById("textInput").value = "";
+    createHTML();
+
+    for (let i = 0; i < finishedTodos.length; i++) {
+        finishedTodos.push(splicedItem);
+        let finishedListItem = document.createElement("li");
+        finishedListItem.id = "finishedListItem";
+        finishedListItem.innerHTML = splicedItem;
+        finishedUl.appendChild(finishedListItem);
+    }
+}
+
 
 
 
