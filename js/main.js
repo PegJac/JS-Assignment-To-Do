@@ -89,6 +89,7 @@ function deleteItem (itemToBeDeleted){
             let splicedItem = todos.splice(i, 1);
 
             createHTML();
+            completedItem(splicedItem);
         }
     }
 }
