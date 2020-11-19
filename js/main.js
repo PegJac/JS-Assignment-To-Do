@@ -73,7 +73,7 @@ function completeToDo(completedTask) { // SPLICE TO DO FROM ARRAY + RECREATE HTM
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == completedTask.id) {
             todos.splice(i, 1);
-
+          
             createHTML();
         }
     }

@@ -22,7 +22,7 @@ body {
         #header {
             margin-bottom: 20px;
 
-            #form {
+          #form {
                 padding: 0;
                 position: relative;
                 display: flex;
@@ -89,6 +89,10 @@ body {
                             @include hover;
                         }
                     }
+                }
+
+                .lineThrough {
+                    background-color: blue;
                 }
             }
         }

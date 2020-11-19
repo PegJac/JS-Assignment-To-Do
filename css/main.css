@@ -2,7 +2,9 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 18px;
   color: white;
+
   background-color: rgba(105, 83, 115, 0.585); }
+
   body .container {
     display: flex;
     flex-direction: column;
@@ -15,6 +17,7 @@ body {
       padding: 10px; }
     body .container #header {
       margin-bottom: 20px; }
+
       body .container #header #form {
         padding: 0;
         position: relative;
@@ -37,6 +40,7 @@ body {
           body .container #header #form #addButton:hover {
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.421);
             background-color: rgba(245, 222, 179, 0.265); }
+
     body .container #main #myUl {
       display: flex;
       flex-direction: column;
@@ -45,6 +49,7 @@ body {
       list-style: none; }
       body .container #main #myUl :nth-child(odd) {
         background-color: rgba(0, 0, 0, 0.109); }
+
       body .container #main #myUl #listItem {
         border-radius: 25px;
         cursor: context-menu;
@@ -53,6 +58,7 @@ body {
         padding: 15px; }
         body .container #main #myUl #listItem :nth-child(odd) {
           background-color: rgba(255, 255, 255, 0); }
+
         body .container #main #myUl #listItem #checkButton {
           position: absolute;
           right: 10px;
@@ -79,3 +85,4 @@ body {
   .container {
     padding-left: 20%;
     padding-right: 20%; } }
+
