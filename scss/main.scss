@@ -113,9 +113,6 @@ body {
         }
 
         #sortForm{
-            position: relative;
-            border: 1px solid blue;
-            height: auto;
 
             #sortButton {
                 position: absolute;
@@ -131,11 +128,6 @@ body {
                     @include hover;
                 }
             }
-        }
-
-        #finishedUl {
-            position: relative;
-            border: 1px solid red;
         }
     }
 }

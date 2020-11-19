@@ -76,22 +76,15 @@ body {
         text-decoration: line-through;
         color: rgba(98, 98, 98, 0.421);
         background-color: lawngreen; }
-    body .container #sortForm {
-      position: relative;
-      border: 1px solid blue;
-      height: auto; }
-      body .container #sortForm #sortButton {
-        position: absolute;
-        top: 10px;
-        right: 0px;
-        font-style: italic;
-        font-size: 13px;
-        border-radius: 25px;
-        color: rgba(255, 255, 255, 0.755);
-        background-color: rgba(128, 128, 128, 0.347); }
-        body .container #sortForm #sortButton:hover {
-          box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
-          background-color: rgba(245, 222, 179, 0.265); }
-    body .container #finishedUl {
-      position: relative;
-      border: 1px solid red; }
+    body .container #sortForm #sortButton {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      font-style: italic;
+      font-size: 13px;
+      border-radius: 25px;
+      color: rgba(255, 255, 255, 0.755);
+      background-color: rgba(128, 128, 128, 0.347); }
+      body .container #sortForm #sortButton:hover {
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
+        background-color: rgba(245, 222, 179, 0.265); }
