@@ -52,6 +52,7 @@ body {
       padding: 0;
       list-style: none; }
       body .container #main #myUl :nth-child(even) {
+
         background-color: rgba(0, 0, 0, 0.109); }
       body .container #main #myUl #listItem {
         border-radius: 25px;
