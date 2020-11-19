@@ -1,5 +1,6 @@
 $textColor: white; 
-$backgroundColor: rgba(74, 74, 74, 0.367);
+$backgroundColor: rgba(105, 83, 115, 0.585);
+$buttonsBgColor: rgba(148, 148, 148, 0.347);
 
 
 //hover
@@ -8,6 +9,6 @@ $hoverBgColor: rgba(245, 222, 179, 0.265);
 
 
 @mixin hover {
-    box-shadow: 2px 2px $boxShadow;
+    box-shadow: 2px 2px 2px $boxShadow;
     background-color: $hoverBgColor;
 } 
