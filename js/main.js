@@ -20,6 +20,7 @@ let finishedToDos = []; // ARRAY TO DO
 finishedToDos.id = "finishedToDos"; 
 let y = 1;
 
+
 window.onload = function () {
 
     let myUl = document.createElement("ul"); // UL LIST
@@ -50,6 +51,7 @@ window.onload = function () {
 
     let addButton = document.getElementById("addButton").addEventListener('click', createListItem);      // ADD BUTTON
     let sortButton = document.getElementById("sortButton").addEventListener('click', sortToDos);      // SORT BUTTON
+
 
     let textInput = document.getElementById("textInput"); // TEXT INPUT
     textInput.id = "textInput";
@@ -116,6 +118,7 @@ function finCreateHTML(){
         deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
         deleteButton.addEventListener('click', () => { deleteFinToDo(finishedToDos[i]) });
         finishedListItem.appendChild(deleteButton);    
+
     }
 }
 
@@ -128,6 +131,7 @@ function completeToDo(completedTask) { // SPLICE TO DO FROM ARRAY + RECREATE HTM
 
             let newFinishedToDo = new finishedToDo(todo);
             finishedToDos.push(newFinishedToDo); 
+
 
             createHTML();
             finCreateHTML();

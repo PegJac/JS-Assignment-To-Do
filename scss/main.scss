@@ -59,6 +59,7 @@ body {
                     background-color: $buttonsBgColor;
         
                     &:hover {
+
                         @include hover;
                     }
                 }
@@ -75,6 +76,7 @@ body {
                 list-style: none;
 
                 :nth-child(even) {
+
                     background-color: rgba(0, 0, 0, 0.109);
                 }
     
@@ -112,6 +114,7 @@ body {
                             @include hover;
                         }
                     }
+
                 }
             }
         }
@@ -168,6 +171,7 @@ body {
                         }
                     }
                 }
+
             }
         }
     }
