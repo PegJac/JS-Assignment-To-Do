@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: $textColor;
     background-color: $backgroundColor;
 
@@ -34,7 +34,7 @@ body {
                     color: $textColor;
                     padding-left: 10px;
                     border-radius: 25px;
-                    background-color: rgba(128, 128, 128, 0.347);
+                    background-color: $buttonsBgColor;
                     
                     &:hover {
                         @include hover;
@@ -45,10 +45,9 @@ body {
                 #addButton {
                     border-radius: 25px;
                     color: white;
-                    background-color: rgba(128, 128, 128, 0.347);
+                    background-color: $buttonsBgColor;
     
                     &:hover {
-                        font-weight: bold;
                         @include hover;
                     }
                 }
@@ -65,7 +64,7 @@ body {
                 list-style: none;
 
                 :nth-child(odd) {
-                    background-color: rgba(0, 0, 0, 0.041);
+                    background-color: rgba(0, 0, 0, 0.109);
                 }
     
                 #listItem{
@@ -79,49 +78,42 @@ body {
                         background-color: rgba(255, 255, 255, 0);
                     }
     
-                    #closeBtn {
+                    #checkButton {
                         position: absolute;
                         right: 10px;
                         border-radius: 25px;
-                        background-color: rgba(128, 128, 128, 0.347);
-                        color: white;
+                        background-color: $buttonsBgColor;
+                        color: $textColor;
                         
                         &:hover {
                             @include hover;
                         }
                     }
-
-                    #checkBtn {
-                        position: absolute;
-                        right: 50px;
-                        border-radius: 25px;
-                        background-color: rgba(128, 128, 128, 0.347);
-                        color: white;
-    
-                        &:hover {
-                            @include hover;
-                        }
-                    }
                 }
             }
         }
 
-        #sortForm{
+        #sortButton {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            font-style: italic;
+            font-size: 12px;
+            border-radius: 25px;
+            color: rgba(255, 255, 255, 0.755);
+            background-color: $buttonsBgColor;
 
-            #sortButton {
-                position: absolute;
-                top: 10px;
-                right: 0px;
-                font-style: italic;
-                font-size: 13px;
-                border-radius: 25px;
-                color: rgba(255, 255, 255, 0.755);
-                background-color: rgba(128, 128, 128, 0.347);
-    
-                &:hover {
-                    @include hover;
-                }
+            &:hover {
+                @include hover;
             }
         }
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .container{
+        padding-left: 20%;
+        padding-right: 20%;
     }
 }

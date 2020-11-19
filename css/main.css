@@ -1,8 +1,8 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
-  background-color: rgba(74, 74, 74, 0.367); }
+  background-color: rgba(105, 83, 115, 0.585); }
   body .container {
     display: flex;
     flex-direction: column;
@@ -26,17 +26,16 @@ body {
           color: white;
           padding-left: 10px;
           border-radius: 25px;
-          background-color: rgba(128, 128, 128, 0.347); }
+          background-color: rgba(148, 148, 148, 0.347); }
           body .container #header #form #textInput:hover {
-            box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.421);
             background-color: rgba(245, 222, 179, 0.265); }
         body .container #header #form #addButton {
           border-radius: 25px;
           color: white;
-          background-color: rgba(128, 128, 128, 0.347); }
+          background-color: rgba(148, 148, 148, 0.347); }
           body .container #header #form #addButton:hover {
-            font-weight: bold;
-            box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.421);
             background-color: rgba(245, 222, 179, 0.265); }
     body .container #main #myUl {
       display: flex;
@@ -45,7 +44,7 @@ body {
       padding: 0;
       list-style: none; }
       body .container #main #myUl :nth-child(odd) {
-        background-color: rgba(0, 0, 0, 0.041); }
+        background-color: rgba(0, 0, 0, 0.109); }
       body .container #main #myUl #listItem {
         border-radius: 25px;
         cursor: context-menu;
@@ -54,33 +53,29 @@ body {
         padding: 15px; }
         body .container #main #myUl #listItem :nth-child(odd) {
           background-color: rgba(255, 255, 255, 0); }
-        body .container #main #myUl #listItem #closeBtn {
+        body .container #main #myUl #listItem #checkButton {
           position: absolute;
           right: 10px;
           border-radius: 25px;
-          background-color: rgba(128, 128, 128, 0.347);
+          background-color: rgba(148, 148, 148, 0.347);
           color: white; }
-          body .container #main #myUl #listItem #closeBtn:hover {
-            box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
+          body .container #main #myUl #listItem #checkButton:hover {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.421);
             background-color: rgba(245, 222, 179, 0.265); }
-        body .container #main #myUl #listItem #checkBtn {
-          position: absolute;
-          right: 50px;
-          border-radius: 25px;
-          background-color: rgba(128, 128, 128, 0.347);
-          color: white; }
-          body .container #main #myUl #listItem #checkBtn:hover {
-            box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
-            background-color: rgba(245, 222, 179, 0.265); }
-    body .container #sortForm #sortButton {
+    body .container #sortButton {
       position: absolute;
       top: 10px;
       right: 0px;
       font-style: italic;
-      font-size: 13px;
+      font-size: 12px;
       border-radius: 25px;
       color: rgba(255, 255, 255, 0.755);
-      background-color: rgba(128, 128, 128, 0.347); }
-      body .container #sortForm #sortButton:hover {
-        box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
+      background-color: rgba(148, 148, 148, 0.347); }
+      body .container #sortButton:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.421);
         background-color: rgba(245, 222, 179, 0.265); }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-left: 20%;
+    padding-right: 20%; } }
