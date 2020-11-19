@@ -17,7 +17,7 @@ todos.id = "todos";
 let x = 1; // OBJECT ID
 
 let finishedToDos = []; // ARRAY TO DO
-finishedToDos.id = "finishedToDos";
+finishedToDos.id = "finishedToDos"; 
 let y = 1;
 
 window.onload = function () {
