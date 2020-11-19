@@ -24,11 +24,9 @@ body {
 
             #form {
                 padding: 0;
-                position: relative;
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                width: 100%;
                 
                 #textInput {
                     color: $textColor;
@@ -51,6 +49,20 @@ body {
                         @include hover;
                     }
                 }
+
+                #sortButton {
+                    font-size: 12px;
+                    top: 20px;
+                    left: 82%;
+                    border-radius: 25px;
+                    color: rgba(255, 255, 255, 0.755);
+                    background-color: $buttonsBgColor;
+        
+                    &:hover {
+
+                        @include hover;
+                    }
+                }
             }
         } 
     
@@ -63,7 +75,8 @@ body {
                 padding: 0;
                 list-style: none;
 
-                :nth-child(odd) {
+                :nth-child(even) {
+
                     background-color: rgba(0, 0, 0, 0.109);
                 }
     
@@ -74,7 +87,7 @@ body {
                     width: 100%;
                     padding: 15px;
                     
-                    :nth-child(odd) {
+                    :nth-child(even) {
                         background-color: rgba(255, 255, 255, 0);
                     }
     
@@ -89,22 +102,76 @@ body {
                             @include hover;
                         }
                     }
+
+                    #deleteButton {
+                        position: absolute;
+                        right: 55px;
+                        border-radius: 25px;
+                        background-color: $buttonsBgColor;
+                        color: $textColor;
+                        
+                        &:hover {
+                            @include hover;
+                        }
+                    }
+
                 }
             }
         }
 
-        #sortButton {
-            position: absolute;
-            top: 10px;
-            right: 0px;
-            font-style: italic;
-            font-size: 12px;
-            border-radius: 25px;
-            color: rgba(255, 255, 255, 0.755);
-            background-color: $buttonsBgColor;
+        #completed {
 
-            &:hover {
-                @include hover;
+            #finishedUl {
+                display: flex;
+                flex-direction: column;
+                margin: 0; 
+                padding: 0;
+                padding-top: 50px;
+                list-style: none;
+
+                :nth-child(odd) {
+                    background-color: rgba(241, 241, 241, 0.109);
+                }
+    
+                #finishedListItem{
+                    border-radius: 25px;
+                    cursor: context-menu;
+                    position: relative;
+                    width: 100%;
+                    padding: 10px;
+                    padding-left: 20px;
+                    text-decoration: line-through;
+                    color: rgba(72, 67, 67, 0.327);
+                    
+                    :nth-child(even) {
+                        background-color: rgba(255, 255, 255, 0);
+                    }
+    
+                    #checkButton {
+                        position: absolute;
+                        right: 10px;
+                        border-radius: 25px;
+                        background-color: $buttonsBgColor;
+                        color: $textColor;
+                        
+                        &:hover {
+                            @include hover;
+                        }
+                    }
+
+                    #deleteButton {
+                        position: absolute;
+                        right: 55px;
+                        border-radius: 25px;
+                        background-color: $buttonsBgColor;
+                        color: $textColor;
+                        
+                        &:hover {
+                            @include hover;
+                        }
+                    }
+                }
+
             }
         }
     }
