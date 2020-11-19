@@ -16,7 +16,7 @@ let todos = []; // ARRAY TO DO
 todos.id = "todos";
 let x = 1; // OBJECT ID
 
-let finishedToDos = []; // ARRAY TO DO
+let finishedToDos = []; // ARRAY FINISHED TO DO
 finishedToDos.id = "finishedToDos";
 let y = 1;
 
@@ -151,8 +151,6 @@ function undoCompletedToDo (uncheckItem){
 
             createHTML();
             finCreateHTML();
-            console.log(todos);
-            console.log(finishedToDos);
         }
     }
 }
@@ -164,7 +162,6 @@ function deleteToDo (deleteTask){
             todos.splice(i, 1);
 
             createHTML();
-            console.log(todos);
         }
     }
 }
@@ -175,8 +172,6 @@ function deleteFinToDo (deleteTask){
             finishedToDos.splice(i, 1);
 
             finCreateHTML();
-            console.log(finishedToDos);
-
         }
     }
 }
