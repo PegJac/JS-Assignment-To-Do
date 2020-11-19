@@ -72,10 +72,6 @@ body {
           body .container #main #myUl #listItem #checkBtn:hover {
             box-shadow: 2px 2px rgba(0, 0, 0, 0.421);
             background-color: rgba(245, 222, 179, 0.265); }
-      body .container #main #myUl .lineThrough {
-        text-decoration: line-through;
-        color: rgba(98, 98, 98, 0.421);
-        background-color: lawngreen; }
     body .container #sortForm #sortButton {
       position: absolute;
       top: 10px;
