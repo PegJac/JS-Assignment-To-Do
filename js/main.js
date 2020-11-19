@@ -1,66 +1,58 @@
 class toDo {
-    constructor (toDoItem){
+    constructor(toDoItem) {
         this.id = x++;
         this.toDoItem = toDoItem;
     }
 }
 
-//array todos
-let todos = [];
+let todos = []; // ARRAY TO DO
 todos.id = "todos";
-//array items id
-let x = 1;
+let x = 1; // OBJECT ID
 
-window.onload = function (){
+window.onload = function () {
 
-    //UL
-    let myUl = document.createElement("ul");
+    let myUl = document.createElement("ul"); // UL LIST
     myUl.id = "myUl";
     let main = document.getElementById("main").appendChild(myUl);
 
-    //LIST ITEMS
-    let todo1 = new toDo('Tvätta');
+    let todo1 = new toDo('Tvätta'); // TO DO TASKS
     let todo2 = new toDo('Damsuga');
     let todo3 = new toDo('Handla');
+    let todo4 = new toDo('Panta');
+    let todo5 = new toDo('Plugga');
 
-    todos.push(todo1);
+    todos.push(todo1); // PUSH TO DO TO ARRAY
     todos.push(todo2);
     todos.push(todo3);
+    todos.push(todo4);
+    todos.push(todo5);
 
-    console.log(todos);
+    let addButton = document.getElementById("addButton").addEventListener('click', createListItem);      // ADD BUTTON
+    let sortButton = document.getElementById("sortButton").addEventListener('click', sortToDos);      // SORT BUTTON
 
-
-    //ADD BUTTON
-    let addButton = document.getElementById("addButton").addEventListener('click', createListItem);
-
-    //SORT BUTTON
-    let sortButton = document.getElementById("sortButton").addEventListener('click', sortToDos);
-
-    //TEXT INPUT
-    let textInput = document.getElementById("textInput");
+    let textInput = document.getElementById("textInput"); // TEXT INPUT
     textInput.id = "textInput";
 
     createHTML();
 }
 
-//SKAPA NYTT LIST ITEM
-function createListItem (){
+function createListItem() { // CREATE NEW TO DO WITH USER INPUT
     let newListItem = document.getElementById("textInput").value;
 
-    if (newListItem == ""){
+    if (newListItem == "") {
         alert("Skriv någonting! :-)");
     }
 
     else {
-        let newToDo = new toDo (newListItem);
+        let newToDo = new toDo(newListItem);
         todos.push(newToDo);
         document.getElementById("textInput").value = "";
+
         createHTML();
     }
 }
 
-//SKRIV UT LIST ITEMS - TILLDELA STÄNGKNAPPAR
-function createHTML (){
+function createHTML() { // CREATE HTML OUT OF ARRAY + ASSIGN CHECK BUTTONS TO EACH TO DO
     myUl.innerHTML = "";
 
     for (let i = 0; i < todos.length; i++) {
@@ -69,61 +61,28 @@ function createHTML (){
         listItem.innerHTML = todos[i].toDoItem;
         myUl.appendChild(listItem);
 
-        let closeBtn = document.createElement("button"); //skapa stäng knapp
-        let checkBtn = document.createElement("button"); //skapa check knapp
-        closeBtn.id = "closeBtn";
-        closeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        checkBtn.id = "checkBtn";
-        checkBtn.innerHTML = '<i class="far fa-check-circle"></i>';
-        closeBtn.addEventListener('click', ()=>{deleteItem(todos[i])});
-        checkBtn.addEventListener('click', ()=>{finishedItem(todos[i])});
-        listItem.appendChild(checkBtn);
-        listItem.appendChild(closeBtn); //lägg knapparna i li
+        let checkButton = document.createElement("button");
+        checkButton.id = "checkButton";
+        checkButton.innerHTML = '<i class="far fa-check-circle"></i>';
+        checkButton.addEventListener('click', () => { completeToDo(todos[i]) });
+        listItem.appendChild(checkButton);
     }
 }
 
-function deleteItem (itemToBeDeleted){
-
+function completeToDo(completedTask) { // SPLICE TO DO FROM ARRAY + RECREATE HTML
     for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == itemToBeDeleted.id) {
-            let splicedItem = todos.splice(i, 1);
-
-            createHTML();
-            completedItem(splicedItem);
-        }
-    }
-}
-
-function finishedItem (itemToBeChecked){
-    for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == itemToBeChecked.id){
-            
+        if (todos[i].id == completedTask.id) {
+            todos.splice(i, 1);
+          
             createHTML();
         }
     }
 }
 
-function sortToDos (){
-    todos.sort();
+function sortToDos() { // SHUFFLE ORDER OF ARRAY + RECREATE HTML
+    todos.sort(function () {
+        return 0.5 - Math.random()
+    });
+
+    createHTML();
 }
-
-
-
-/*
-
-
-För betyg G: 
-X Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter)
-X Presentera denna på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
-X Implementera klickhändelse för att hantera borttagandet av en todo. 
-X Todo tas bort från skärmen och markeras som klar i listan.
-X Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. bootstrap, flex eller liknande. 
-
-För betyg VG: 
-• Alla punkter under G
-• Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
-X Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
-• Kunna sortera ordningen på dina todos
-
-
-*/

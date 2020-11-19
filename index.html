@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,24 +12,31 @@
     <script src="https://kit.fontawesome.com/092e126ec9.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12" id="headingRow"> <!--Rubrik-->
-                <h1 id="heading"> To Do's </h1>
+            <div class="col-12" id="headingRow">
+                <h1 id="heading"> On Today's Agenda: </h1>
             </div>
         </div>
-        <div class="row"> 
+        <div class="row">
             <header class="col-12" id="header">
-                <form id="form">
-                    <input type="text" class="col-8" id="textInput" placeholder="New to-do...">
-                    <button type="button" class="col-2" id="addButton"> Add! </button>
-                    <button type="button" class="col-1.5" id="sortButton"> Sort! </button>
+                <form class="col-12" id="form">
+                    <input type="text" class="col-8" id="textInput" placeholder="What are you doing today?">
+                    <button type="button" class="col-4" id="addButton"> Add to the list! </button>
                 </form>
             </header>
         </div>
         <div class="row">
             <div class="col-12" id="main">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form class="col-12" id="sortForm">
+                    <button type="button" class="col-3" id="sortButton"> Don't know where to start? </button>
+                </form>
             </div>
         </div>
     </div>
