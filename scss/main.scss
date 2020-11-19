@@ -2,14 +2,13 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: $textColor;
     background-color: $backgroundColor;
 
     .container {
         display: flex;
         flex-direction: column;
-        border-radius: 25px;
         margin-top: 20px;
         margin-bottom: 20px;
         padding-bottom: 20px;
@@ -21,39 +20,37 @@ body {
         }
     
         #header {
-            position: relative;
-            width: 100%;
             margin-bottom: 20px;
 
-            #textInput {
-                color: $textColor;
-                padding-left: 10px;
-                border-radius: 25px;
-                background-color: rgba(128, 128, 128, 0.258);
+            #form {
+                padding: 0;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
                 
-                &:hover {
-                    background-color: rgba(199, 199, 199, 0.238);
+                #textInput {
+                    color: $textColor;
+                    padding-left: 10px;
+                    border-radius: 25px;
+                    background-color: rgba(128, 128, 128, 0.347);
+                    
+                    &:hover {
+                        @include hover;
+                    }
+                    
                 }
-                
-            }
-
-            #addButton {
-                border-radius: 25px;
-                color: white;
-                background-color: rgba(128, 128, 128, 0.251);
-
-                &:hover {
-                    background-color: rgba(199, 199, 199, 0.238);
-                }
-            }
-
-            #sortButton {
-                border-radius: 25px;
-                color: white;
-                background-color: rgba(128, 128, 128, 0.251);
-
-                &:hover {
-                    background-color: rgba(199, 199, 199, 0.238);
+    
+                #addButton {
+                    border-radius: 25px;
+                    color: white;
+                    background-color: rgba(128, 128, 128, 0.347);
+    
+                    &:hover {
+                        font-weight: bold;
+                        @include hover;
+                    }
                 }
             }
         } 
@@ -66,51 +63,79 @@ body {
                 margin: 0; 
                 padding: 0;
                 list-style: none;
+
+                :nth-child(odd) {
+                    background-color: rgba(0, 0, 0, 0.041);
+                }
     
                 #listItem{
                     border-radius: 25px;
-                    cursor: pointer;
+                    cursor: context-menu;
                     position: relative;
                     width: 100%;
                     padding: 15px;
-    
-                    &:hover {
-                        background-color: rgba(86, 86, 86, 0.367);
-                        box-shadow: 2px 2px rgba(41, 41, 41, 0.591);
-    
+                    
+                    :nth-child(odd) {
+                        background-color: rgba(255, 255, 255, 0);
                     }
     
                     #closeBtn {
                         position: absolute;
                         right: 10px;
                         border-radius: 25px;
-                        background-color: grey;
+                        background-color: rgba(128, 128, 128, 0.347);
                         color: white;
                         
                         &:hover {
-                            box-shadow: 2px 2px black;
-                            background-color: rgba(199, 199, 199, 0.238);
+                            @include hover;
                         }
                     }
+
                     #checkBtn {
                         position: absolute;
                         right: 50px;
-                        color: white;
                         border-radius: 25px;
-                        background-color: grey;
+                        background-color: rgba(128, 128, 128, 0.347);
                         color: white;
     
                         &:hover {
-                            box-shadow: 2px 2px black;
-                            background-color: rgba(199, 199, 199, 0.238);
+                            @include hover;
                         }
                     }
                 }
-            }
 
-            #finishedUl {
-                border: 1px solid red;
+                .lineThrough {
+                    text-decoration: line-through;
+                    color: rgba(98, 98, 98, 0.421);
+                    background-color: lawngreen;
+                }
             }
+        }
+
+        #sortForm{
+            position: relative;
+            border: 1px solid blue;
+            height: auto;
+
+            #sortButton {
+                position: absolute;
+                top: 10px;
+                right: 0px;
+                font-style: italic;
+                font-size: 13px;
+                border-radius: 25px;
+                color: rgba(255, 255, 255, 0.755);
+                background-color: rgba(128, 128, 128, 0.347);
+    
+                &:hover {
+                    @include hover;
+                }
+            }
+        }
+
+        #finishedUl {
+            position: relative;
+            border: 1px solid red;
         }
     }
 }
