@@ -22,7 +22,7 @@ body {
         #header {
             margin-bottom: 20px;
 
-          #form {
+            #form {
                 padding: 0;
                 position: relative;
                 display: flex;
@@ -44,7 +44,7 @@ body {
     
                 #addButton {
                     border-radius: 25px;
-                    color: white;
+                    color: $textColor;
                     background-color: $buttonsBgColor;
     
                     &:hover {
@@ -89,10 +89,6 @@ body {
                             @include hover;
                         }
                     }
-                }
-
-                .lineThrough {
-                    background-color: blue;
                 }
             }
         }
